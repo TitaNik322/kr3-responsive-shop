@@ -1,362 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Механические и оптические клавиатуры: фильтры по переключателям и цене." name="description"/>
-  <meta content="#173e36" name="theme-color"/>
-  <title>
-   Каталог клавиатур — KeyboardShop
-  </title>
-  <link href="images/favicon.svg" rel="icon" type="image/svg+xml"/>
-  <link href="css/style.css" rel="stylesheet"/>
-  <link href="css/responsive.css" rel="stylesheet"/>
-  <script defer="" src="js/main.js">
-  </script>
- </head>
- <body id="top">
-  <a class="skip-link" href="#main">
-   Перейти к содержимому
-  </a>
-  <div class="announcement">
-   Хороший день начинается с хорошей клавиатуры ↗
-  </div>
-  <header class="site-header">
-   <div class="container site-header__inner">
-    <a class="site-logo" href="index.html">
-     <span aria-hidden="true" class="logo-key">
-      k.
-     </span>
-     KeyboardShop
-     <span aria-hidden="true" class="logo-dot">
-      ®
-     </span>
-    </a>
-    <details class="nav-menu">
-     <summary>
-      Меню
-      <span aria-hidden="true">
-       ☰
-      </span>
-     </summary>
-     <nav aria-label="Основная навигация">
-      <ul class="site-nav__list">
-       <li>
-        <a href="index.html">
-         Главная
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Механические и оптические клавиатуры: фильтры по переключателям и цене."
+      name="description"
+    />
+    <meta content="#173e36" name="theme-color" />
+    <title>Каталог клавиатур — KeyboardShop</title>
+    <link href="images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <script defer="" src="js/main.js"></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main"> Перейти к содержимому </a>
+    <div class="announcement">Хороший день начинается с хорошей клавиатуры ↗</div>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="index.html">
+          <span aria-hidden="true" class="logo-key"> k. </span>
+          KeyboardShop
+          <span aria-hidden="true" class="logo-dot"> ® </span>
         </a>
-       </li>
-       <li>
-        <a aria-current="page" href="catalog.html">
-         Каталог
-        </a>
-       </li>
-       <li>
-        <a href="order.html">
-         Заявка
-        </a>
-       </li>
-       <li>
-        <a href="contacts.html">
-         Контакты
-        </a>
-       </li>
-      </ul>
-     </nav>
-    </details>
-    <a class="header-link" href="catalog.html">
-     Выбрать клавиатуру ↗
-    </a>
-   </div>
-  </header>
-  <main class="container" id="main" tabindex="-1">
-   <nav aria-label="Хлебные крошки" class="breadcrumbs">
-    <a href="index.html">
-     Главная
-    </a>
-    <span aria-hidden="true">
-     /
-    </span>
-    <span>
-     Каталог
-    </span>
-   </nav>
-   <section class="page-heading">
-    <p class="eyebrow">
-     Твой следующий любимый инструмент
-    </p>
-    <h1>
-     Клавиатуры
-     <span class="accent">
-      .
-     </span>
-    </h1>
-    <p>
-     Три модели. Три характера. Выбирай свой.
-    </p>
-   </section>
-   <div class="catalog-layout">
-    <aside class="catalog-filters">
-     <details class="filter-panel" open="">
-      <summary>
-       Фильтры
-       <span aria-hidden="true">
-        ＋
-       </span>
-      </summary>
-      <form id="filters-form">
-       <fieldset>
-        <legend>
-         Переключатели
-        </legend>
-        <label class="checkbox">
-         <input name="kind" type="checkbox" value="mechanical"/>
-         Механические
-        </label>
-        <label class="checkbox">
-         <input name="kind" type="checkbox" value="optical"/>
-         Оптические
-        </label>
-       </fieldset>
-       <fieldset>
-        <legend>
-         Цена, ₽
-        </legend>
-        <div class="price-fields">
-         <div class="form-field">
-          <label for="price-from">
-           От
-          </label>
-          <input id="price-from" min="0" name="min" placeholder="0" type="number"/>
-         </div>
-         <div class="form-field">
-          <label for="price-to">
-           До
-          </label>
-          <input id="price-to" min="0" name="max" placeholder="20000" type="number"/>
-         </div>
-        </div>
-       </fieldset>
-       <div class="filter-actions">
-        <button class="button" type="submit">
-         Показать
-        </button>
-        <button class="text-button" type="reset">
-         Сбросить фильтры
-        </button>
-       </div>
-      </form>
-     </details>
-     <p class="filter-note">
-      Совет: механика — для выразительного нажатия, оптика — для быстрого отклика.
-     </p>
-    </aside>
-    <section aria-labelledby="collection-title" class="catalog-products">
-     <div class="catalog-toolbar">
-      <h2 id="collection-title">
-       Коллекция
-      </h2>
-      <p id="result-count" role="status">
-       3 модели
-      </p>
-      <div>
-       <label for="sort">
-        Порядок
-       </label>
-       <select id="sort">
-        <option value="default">
-         По умолчанию
-        </option>
-        <option value="asc">
-         Сначала дешевле
-        </option>
-        <option value="desc">
-         Сначала дороже
-        </option>
-       </select>
+        <details class="nav-menu">
+          <summary>
+            Меню
+            <span aria-hidden="true"> ☰ </span>
+          </summary>
+          <nav aria-label="Основная навигация">
+            <ul class="site-nav__list">
+              <li>
+                <a href="index.html"> Главная </a>
+              </li>
+              <li>
+                <a aria-current="page" href="catalog.html"> Каталог </a>
+              </li>
+              <li>
+                <a href="order.html"> Заявка </a>
+              </li>
+              <li>
+                <a href="contacts.html"> Контакты </a>
+              </li>
+            </ul>
+          </nav>
+        </details>
+        <a class="header-link" href="catalog.html"> Выбрать клавиатуру ↗ </a>
       </div>
-     </div>
-     <div class="products-grid" id="catalog-grid">
-      <article class="product-card" data-kind="mechanical" data-price="5990">
-       <div class="product-card__image-wrap">
-        <span class="product-card__badge">
-         Новинка
-        </span>
-        <picture>
-         <source sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw" srcset="images/product-1-light-320.webp 320w, images/product-1-light-800.webp 800w, images/product-1-light-1200.webp 1200w" type="image/webp"/>
-         <img alt="Красная механическая клавиатура с золотым рисунком дракона на светлом фоне" class="product-card__image" height="750" loading="lazy" src="images/product-1-light.jpg" width="1200"/>
-        </picture>
-       </div>
-       <div class="product-card__body">
-        <p class="eyebrow">
-         Механическая клавиатура
-        </p>
-        <h3 class="product-card__title">
-         <a href="product-1.html">
-          Lynace K1 Dragon
-         </a>
-        </h3>
-        <p class="product-card__description">
-         Характер, который слышно с первого нажатия.
-        </p>
-        <div class="product-card__bottom">
-         <p class="product-card__price">
-          5 990 ₽
-         </p>
-         <a aria-label="Подробнее о Lynace K1 Dragon" class="button button--small" href="product-1.html">
-          Подробнее ↗
-         </a>
+    </header>
+    <main class="container" id="main" tabindex="-1">
+      <nav aria-label="Хлебные крошки" class="breadcrumbs">
+        <a href="index.html"> Главная </a>
+        <span aria-hidden="true"> / </span>
+        <span> Каталог </span>
+      </nav>
+      <section class="page-heading">
+        <p class="eyebrow">Твой следующий любимый инструмент</p>
+        <h1>
+          Клавиатуры
+          <span class="accent"> . </span>
+        </h1>
+        <p>Три модели. Три характера. Выбирай свой.</p>
+      </section>
+      <div class="catalog-layout">
+        <aside class="catalog-filters">
+          <details class="filter-panel" open="">
+            <summary>
+              Фильтры
+              <span aria-hidden="true"> ＋ </span>
+            </summary>
+            <form id="filters-form">
+              <fieldset>
+                <legend>Переключатели</legend>
+                <label class="checkbox">
+                  <input name="kind" type="checkbox" value="mechanical" />
+                  Механические
+                </label>
+                <label class="checkbox">
+                  <input name="kind" type="checkbox" value="optical" />
+                  Оптические
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend>Цена, ₽</legend>
+                <div class="price-fields">
+                  <div class="form-field">
+                    <label for="price-from"> От </label>
+                    <input id="price-from" min="0" name="min" placeholder="0" type="number" />
+                  </div>
+                  <div class="form-field">
+                    <label for="price-to"> До </label>
+                    <input id="price-to" min="0" name="max" placeholder="20000" type="number" />
+                  </div>
+                </div>
+              </fieldset>
+              <div class="filter-actions">
+                <button class="button" type="submit">Показать</button>
+                <button class="text-button" type="reset">Сбросить фильтры</button>
+              </div>
+            </form>
+          </details>
+          <p class="filter-note">
+            Совет: механика — для выразительного нажатия, оптика — для быстрого отклика.
+          </p>
+        </aside>
+        <section aria-labelledby="collection-title" class="catalog-products">
+          <div class="catalog-toolbar">
+            <h2 id="collection-title">Коллекция</h2>
+            <p id="result-count" role="status">3 модели</p>
+            <div>
+              <label for="sort"> Порядок </label>
+              <select id="sort">
+                <option value="default">По умолчанию</option>
+                <option value="asc">Сначала дешевле</option>
+                <option value="desc">Сначала дороже</option>
+              </select>
+            </div>
+          </div>
+          <div class="products-grid" id="catalog-grid">
+            <article class="product-card" data-kind="mechanical" data-price="5990">
+              <div class="product-card__image-wrap">
+                <span class="product-card__badge"> Новинка </span>
+                <picture>
+                  <source
+                    sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw"
+                    srcset="
+                      images/product-1-light-320.webp   320w,
+                      images/product-1-light-800.webp   800w,
+                      images/product-1-light-1200.webp 1200w
+                    "
+                    type="image/webp"
+                  />
+                  <img
+                    alt="Красная механическая клавиатура с золотым рисунком дракона на светлом фоне"
+                    class="product-card__image"
+                    height="750"
+                    loading="lazy"
+                    src="images/product-1-light.jpg"
+                    width="1200"
+                  />
+                </picture>
+              </div>
+              <div class="product-card__body">
+                <p class="eyebrow">Механическая клавиатура</p>
+                <h3 class="product-card__title">
+                  <a href="product-1.html"> Lynace K1 Dragon </a>
+                </h3>
+                <p class="product-card__description">Характер, который слышно с первого нажатия.</p>
+                <div class="product-card__bottom">
+                  <p class="product-card__price">5 990 ₽</p>
+                  <a
+                    aria-label="Подробнее о Lynace K1 Dragon"
+                    class="button button--small"
+                    href="product-1.html"
+                  >
+                    Подробнее ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-kind="mechanical" data-price="12990">
+              <div class="product-card__image-wrap">
+                <span class="product-card__badge"> Выбор игроков </span>
+                <picture>
+                  <source
+                    sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw"
+                    srcset="images/product-2-320.webp 320w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt="Logitech G Pro X — клавиатура из каталога"
+                    class="product-card__image"
+                    height="320"
+                    loading="lazy"
+                    src="images/product-2.jpg"
+                    width="320"
+                  />
+                </picture>
+              </div>
+              <div class="product-card__body">
+                <p class="eyebrow">Механическая клавиатура</p>
+                <h3 class="product-card__title">
+                  <a href="product-2.html"> Logitech G Pro X </a>
+                </h3>
+                <p class="product-card__description">Компактный формат. Полный контроль.</p>
+                <div class="product-card__bottom">
+                  <p class="product-card__price">12 990 ₽</p>
+                  <a
+                    aria-label="Подробнее о Logitech G Pro X"
+                    class="button button--small"
+                    href="product-2.html"
+                  >
+                    Подробнее ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-kind="optical" data-price="17990">
+              <div class="product-card__image-wrap">
+                <span class="product-card__badge"> Оптические </span>
+                <picture>
+                  <source
+                    sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw"
+                    srcset="images/product-3-320.webp 320w, images/product-3-800.webp 800w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt="Razer Huntsman V2 — клавиатура из каталога"
+                    class="product-card__image"
+                    height="800"
+                    loading="lazy"
+                    src="images/product-3.jpg"
+                    width="800"
+                  />
+                </picture>
+              </div>
+              <div class="product-card__body">
+                <p class="eyebrow">Оптическая клавиатура</p>
+                <h3 class="product-card__title">
+                  <a href="product.html"> Razer Huntsman V2 </a>
+                </h3>
+                <p class="product-card__description">Быстрый отклик для больших побед.</p>
+                <div class="product-card__bottom">
+                  <p class="product-card__price">17 990 ₽</p>
+                  <a
+                    aria-label="Подробнее о Razer Huntsman V2"
+                    class="button button--small"
+                    href="product.html"
+                  >
+                    Подробнее ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="empty-state" hidden="" id="empty-state">
+            Ничего не найдено. Измените цену или сбросьте фильтры.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer" id="contacts">
+      <div class="container footer-grid">
+        <div>
+          <a class="site-logo" href="index.html"> KeyboardShop® </a>
+          <p>
+            Найди свой ритм.
+            <br />
+            Начни с первого нажатия.
+          </p>
         </div>
-       </div>
-      </article>
-      <article class="product-card" data-kind="mechanical" data-price="12990">
-       <div class="product-card__image-wrap">
-        <span class="product-card__badge">
-         Выбор игроков
-        </span>
-        <picture>
-         <source sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw" srcset="images/product-2-320.webp 320w" type="image/webp"/>
-         <img alt="Logitech G Pro X — клавиатура из каталога" class="product-card__image" height="320" loading="lazy" src="images/product-2.jpg" width="320"/>
-        </picture>
-       </div>
-       <div class="product-card__body">
-        <p class="eyebrow">
-         Механическая клавиатура
-        </p>
-        <h3 class="product-card__title">
-         <a href="product-2.html">
-          Logitech G Pro X
-         </a>
-        </h3>
-        <p class="product-card__description">
-         Компактный формат. Полный контроль.
-        </p>
-        <div class="product-card__bottom">
-         <p class="product-card__price">
-          12 990 ₽
-         </p>
-         <a aria-label="Подробнее о Logitech G Pro X" class="button button--small" href="product-2.html">
-          Подробнее ↗
-         </a>
+        <nav aria-label="Навигация в подвале">
+          <a href="catalog.html"> Каталог </a>
+          <a href="order.html"> Оформить заявку </a>
+          <a href="contacts.html#feedback"> Обратная связь </a>
+        </nav>
+        <div>
+          <p class="eyebrow">В твоём ритме</p>
+          <p>
+            Для работы, игр
+            <br />
+            и больших идей.
+          </p>
+          <a href="#top"> Вернуться наверх ↑ </a>
         </div>
-       </div>
-      </article>
-      <article class="product-card" data-kind="optical" data-price="17990">
-       <div class="product-card__image-wrap">
-        <span class="product-card__badge">
-         Оптические
-        </span>
-        <picture>
-         <source sizes="(min-width: 1024px) 350px, (min-width: 640px) 45vw, 90vw" srcset="images/product-3-320.webp 320w, images/product-3-800.webp 800w" type="image/webp"/>
-         <img alt="Razer Huntsman V2 — клавиатура из каталога" class="product-card__image" height="800" loading="lazy" src="images/product-3.jpg" width="800"/>
-        </picture>
-       </div>
-       <div class="product-card__body">
-        <p class="eyebrow">
-         Оптическая клавиатура
-        </p>
-        <h3 class="product-card__title">
-         <a href="product.html">
-          Razer Huntsman V2
-         </a>
-        </h3>
-        <p class="product-card__description">
-         Быстрый отклик для больших побед.
-        </p>
-        <div class="product-card__bottom">
-         <p class="product-card__price">
-          17 990 ₽
-         </p>
-         <a aria-label="Подробнее о Razer Huntsman V2" class="button button--small" href="product.html">
-          Подробнее ↗
-         </a>
+      </div>
+      <div class="container footer-bottom">
+        <span> © 2026 KeyboardShop </span>
+        <span> Каждое нажатие — твой характер. </span>
+      </div>
+    </footer>
+    <dialog aria-labelledby="dialog-title" class="order-dialog" id="order-dialog">
+      <div class="dialog-heading">
+        <h2 id="dialog-title">Быстрая заявка</h2>
+        <button aria-label="Закрыть окно" class="icon-button" data-close-dialog="" type="button">
+          ×
+        </button>
+      </div>
+      <p id="dialog-product"></p>
+      <form class="order-form" data-request-form="">
+        <input name="product" type="hidden" />
+        <div class="form-field">
+          <label for="quick-name"> Ваше имя * </label>
+          <input autocomplete="name" id="quick-name" minlength="2" name="name" required="" />
         </div>
-       </div>
-      </article>
-     </div>
-     <p class="empty-state" hidden="" id="empty-state">
-      Ничего не найдено. Измените цену или сбросьте фильтры.
-     </p>
-    </section>
-   </div>
-  </main>
-  <footer class="site-footer" id="contacts">
-   <div class="container footer-grid">
-    <div>
-     <a class="site-logo" href="index.html">
-      KeyboardShop®
-     </a>
-     <p>
-      Найди свой ритм.
-      <br/>
-      Начни с первого нажатия.
-     </p>
-    </div>
-    <nav aria-label="Навигация в подвале">
-     <a href="catalog.html">
-      Каталог
-     </a>
-     <a href="order.html">
-      Оформить заявку
-     </a>
-     <a href="contacts.html#feedback">
-      Обратная связь
-     </a>
-    </nav>
-    <div>
-     <p class="eyebrow">
-      В твоём ритме
-     </p>
-     <p>
-      Для работы, игр
-      <br/>
-      и больших идей.
-     </p>
-     <a href="#top">
-      Вернуться наверх ↑
-     </a>
-    </div>
-   </div>
-   <div class="container footer-bottom">
-    <span>
-     © 2026 KeyboardShop
-    </span>
-    <span>
-     Каждое нажатие — твой характер.
-    </span>
-   </div>
-  </footer>
-  <dialog aria-labelledby="dialog-title" class="order-dialog" id="order-dialog">
-   <div class="dialog-heading">
-    <h2 id="dialog-title">
-     Быстрая заявка
-    </h2>
-    <button aria-label="Закрыть окно" class="icon-button" data-close-dialog="" type="button">
-     ×
-    </button>
-   </div>
-   <p id="dialog-product">
-   </p>
-   <form class="order-form" data-request-form="">
-    <input name="product" type="hidden"/>
-    <div class="form-field">
-     <label for="quick-name">
-      Ваше имя *
-     </label>
-     <input autocomplete="name" id="quick-name" minlength="2" name="name" required=""/>
-    </div>
-    <div class="form-field">
-     <label for="quick-email">
-      Электронная почта *
-     </label>
-     <input autocomplete="email" id="quick-email" name="email" required="" type="email"/>
-    </div>
-    <button class="button form-field--wide" type="submit">
-     Проверить заявку
-    </button>
-    <p class="form-status form-field--wide" role="status" tabindex="-1">
-    </p>
-   </form>
-  </dialog>
- </body>
+        <div class="form-field">
+          <label for="quick-email"> Электронная почта * </label>
+          <input autocomplete="email" id="quick-email" name="email" required="" type="email" />
+        </div>
+        <button class="button form-field--wide" type="submit">Проверить заявку</button>
+        <p class="form-status form-field--wide" role="status" tabindex="-1"></p>
+      </form>
+    </dialog>
+  </body>
 </html>

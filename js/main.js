@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-// Native details remains usable without JavaScript; enhance keyboard closing.
+// Меню и фильтры: нативное details работает и без JavaScript.
 const menu = document.querySelector('.nav-menu');
 const menuDesktop = matchMedia('(min-width: 768px)');
 const filters = document.querySelector('.filter-panel');
@@ -37,16 +37,25 @@ document.querySelectorAll('[data-product]').forEach((button) => {
   });
 });
 dialog?.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
-dialog?.addEventListener('click', (event) => { if (event.target === dialog) {
-  const bounds = dialog.getBoundingClientRect();
-  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-}});
+dialog?.addEventListener('click', (event) => {
+  if (event.target === dialog) {
+    const bounds = dialog.getBoundingClientRect();
+    if (
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom
+    )
+      dialog.close();
+  }
+});
 dialog?.addEventListener('close', () => dialogTrigger?.focus());
-// Keep Tab and Shift+Tab within the dialog, including the browser's wrap boundary.
+// Замыкаем переходы Tab и Shift+Tab внутри модального окна.
 dialog?.addEventListener('keydown', (event) => {
   if (event.key !== 'Tab') return;
-  const controls = [...dialog.querySelectorAll('button, input:not([type=hidden]), select, textarea, a[href]')]
-    .filter((element) => !element.disabled && element.getClientRects().length);
+  const controls = [
+    ...dialog.querySelectorAll('button, input:not([type=hidden]), select, textarea, a[href]'),
+  ].filter((element) => !element.disabled && element.getClientRects().length);
   const first = controls[0];
   const last = controls.at(-1);
   if (event.shiftKey && document.activeElement === first) {
@@ -60,7 +69,7 @@ dialog?.addEventListener('keydown', (event) => {
 
 // Проверка форм средствами браузера и доступные сообщения о результате.
 document.querySelectorAll('[data-request-form]').forEach((form) => {
-  // Add linked error text without suppressing the browser's validation messages.
+  // Связываем текст ошибки с полем и сохраняем встроенную проверку браузера.
   form.querySelectorAll('input:not([type=hidden]), textarea, select').forEach((field, index) => {
     const error = document.createElement('span');
     error.className = 'field-error';
@@ -69,7 +78,10 @@ document.querySelectorAll('[data-request-form]').forEach((form) => {
     field.closest('label')?.classList.contains('checkbox')
       ? field.closest('label').after(error)
       : field.after(error);
-    field.setAttribute('aria-describedby', [field.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
+    field.setAttribute(
+      'aria-describedby',
+      [field.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '),
+    );
     field.addEventListener('invalid', () => {
       field.setAttribute('aria-invalid', 'true');
       error.textContent = field.validationMessage;
@@ -87,9 +99,13 @@ document.querySelectorAll('[data-request-form]').forEach((form) => {
     status.textContent = 'Все обязательные поля заполнены корректно.';
     status.focus();
   });
-  form.addEventListener('input', () => { form.querySelector('.form-status').textContent = ''; });
+  form.addEventListener('input', () => {
+    form.querySelector('.form-status').textContent = '';
+  });
   form.addEventListener('reset', () => {
-    form.querySelectorAll('[aria-invalid]').forEach((field) => field.removeAttribute('aria-invalid'));
+    form
+      .querySelectorAll('[aria-invalid]')
+      .forEach((field) => field.removeAttribute('aria-invalid'));
     form.querySelectorAll('.field-error').forEach((error) => {
       error.hidden = true;
       error.textContent = '';
@@ -99,9 +115,10 @@ document.querySelectorAll('[data-request-form]').forEach((form) => {
 });
 const selected = Number(new URLSearchParams(location.search).get('product'));
 const productSelect = document.getElementById('order-product');
-if (productSelect && Number.isInteger(selected) && selected >= 1 && selected <= 3) productSelect.selectedIndex = selected;
+if (productSelect && Number.isInteger(selected) && selected >= 1 && selected <= 3)
+  productSelect.selectedIndex = selected;
 
-// Small catalog enhancement; the complete HTML catalog is available without JS.
+// Фильтрация и сортировка дополняют каталог, который уже находится в HTML.
 const filterForm = document.getElementById('filters-form');
 const grid = document.getElementById('catalog-grid');
 if (filterForm && grid) {
@@ -117,19 +134,33 @@ if (filterForm && grid) {
     to.setCustomValidity(max < min ? 'Цена «До» должна быть не меньше цены «От».' : '');
     if (!filterForm.reportValidity()) return;
     const ordered = [...cards];
-    if (sort.value !== 'default') ordered.sort((a,b) => (Number(a.dataset.price) - Number(b.dataset.price)) * (sort.value === 'asc' ? 1 : -1));
+    if (sort.value !== 'default')
+      ordered.sort(
+        (a, b) =>
+          (Number(a.dataset.price) - Number(b.dataset.price)) * (sort.value === 'asc' ? 1 : -1),
+      );
     let count = 0;
     ordered.forEach((card) => {
       const price = Number(card.dataset.price);
-      card.hidden = !(price >= min && price <= max && (!kinds.length || kinds.includes(card.dataset.kind)));
+      card.hidden = !(
+        price >= min &&
+        price <= max &&
+        (!kinds.length || kinds.includes(card.dataset.kind))
+      );
       if (!card.hidden) count++;
       grid.append(card);
     });
     document.getElementById('result-count').textContent = `Найдено моделей: ${count}`;
     document.getElementById('empty-state').hidden = count > 0;
   }
-  filterForm.addEventListener('submit', (event) => { event.preventDefault(); updateCatalog(); });
+  filterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    updateCatalog();
+  });
   filterForm.addEventListener('input', () => to.setCustomValidity(''));
-  filterForm.addEventListener('reset', () => { to.setCustomValidity(''); setTimeout(updateCatalog, 0); });
+  filterForm.addEventListener('reset', () => {
+    to.setCustomValidity('');
+    setTimeout(updateCatalog, 0);
+  });
   sort.addEventListener('change', updateCatalog);
 }
