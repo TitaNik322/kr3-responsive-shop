@@ -22,7 +22,7 @@ document.addEventListener('click', (event) => {
   if (menu && !menuDesktop.matches && menu.open && !menu.contains(event.target)) menu.open = false;
 });
 
-// Enhance the original KR1 dialog with native focus trapping and Escape support.
+// Модальное окно: фокус, закрытие Escape и возврат на исходную кнопку.
 const dialog = document.getElementById('order-dialog');
 let dialogTrigger;
 document.querySelectorAll('[data-product]').forEach((button) => {
@@ -58,8 +58,8 @@ dialog?.addEventListener('keydown', (event) => {
   }
 });
 
-// Preserve browser validation and clearly identify this as a local demo.
-document.querySelectorAll('[data-demo-form]').forEach((form) => {
+// Проверка форм средствами браузера и доступные сообщения о результате.
+document.querySelectorAll('[data-request-form]').forEach((form) => {
   // Add linked error text without suppressing the browser's validation messages.
   form.querySelectorAll('input:not([type=hidden]), textarea, select').forEach((field, index) => {
     const error = document.createElement('span');
@@ -84,7 +84,7 @@ document.querySelectorAll('[data-demo-form]').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const status = form.querySelector('.form-status');
-    status.textContent = 'Форма заполнена корректно. Это учебная проверка: данные не отправлены и не сохранены.';
+    status.textContent = 'Все обязательные поля заполнены корректно.';
     status.focus();
   });
   form.addEventListener('input', () => { form.querySelector('.form-status').textContent = ''; });
