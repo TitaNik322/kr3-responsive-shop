@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <a class="site-logo" href="index.html">ShopProject</a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="index.html#advantages">Преимущества</a></li>
+            <li><a href="index.html#popular">Популярные товары</a></li>
+            <li><a href="index.html#contacts">Обратная связь</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Учебный интернет-магазин</h1>
+        <p>
+          Это стартовая страница учебного frontend-проекта. В дальнейшем на её
+          основе будет разработан многостраничный сайт интернет-магазина или
+          каталога услуг.
+        </p>
+        <a class="button" href="#popular">Перейти к товарам</a>
+      </section>
+
+      <section class="section" id="advantages">
+        <h2>Преимущества проекта</h2>
+
+        <ul class="advantages-list">
+          <li>понятная HTML-структура;</li>
+          <li>семантические блоки страницы;</li>
+          <li>подключение внешнего CSS-файла;</li>
+          <li>подготовка к разработке многостраничного сайта.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="popular">
+        <h2>Популярные товары</h2>
+        <div class="products-grid">
+          <article class="product-card product-card--new">
+            <span class="product-card__badge">Новинка</span>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/product-1.jpg"
+                alt="Клавиатура Lynace K1 Dragon"
+              />
+            </div>
+            <h3 class="product-card__title">Lynace K1 Dragon</h3>
+            <p class="product-card__description">
+              Механическая клавиатура в красном корпусе с драконьим принтом на
+              кейкапах.
+            </p>
+            <p class="product-card__price">5990 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--ghost" href="product-1.html"
+                >Подробнее</a
+              >
+              <button
+                class="button product-card__button"
+                type="button"
+                data-product="Lynace K1 Dragon"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card product-card--hit">
+            <span class="product-card__badge">Хит</span>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/product-2.jpg"
+                alt="Клавиатура Logitech G Pro X"
+              />
+            </div>
+            <h3 class="product-card__title">Logitech G Pro X</h3>
+            <p class="product-card__description">
+              Компактная игровая клавиатура с горячей заменой свитчей и
+              RGB-подсветкой.
+            </p>
+            <p class="product-card__price">12990 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--ghost" href="product-2.html"
+                >Подробнее</a
+              >
+              <button
+                class="button product-card__button"
+                type="button"
+                data-product="Logitech G Pro X"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card product-card--discount">
+            <span class="product-card__badge">Скидка</span>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/product-3.jpg"
+                alt="Клавиатура Razer Huntsman V2"
+              />
+            </div>
+            <h3 class="product-card__title">Razer Huntsman V2</h3>
+            <p class="product-card__description">
+              Оптическая игровая клавиатура с полноразмерной раскладкой и упором
+              для рук.
+            </p>
+            <p class="product-card__price">17990 руб.</p>
+            <div class="product-card__actions">
+              <a class="button button--ghost" href="product.html">Подробнее</a>
+              <button
+                class="button product-card__button"
+                type="button"
+                data-product="Razer Huntsman V2"
+              >
+                Заказать
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="aside-info">
+        <h2>Информация для студентов</h2>
+        <p>
+          На следующих практических занятиях этот проект будет расширяться:
+          появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
+          БЭМ-структура и адаптивная версия сайта.
+        </p>
+      </aside>
+    </main>
+
+    <footer id="contacts">
+      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </footer>
+    <dialog
+      class="order-dialog"
+      id="order-dialog"
+      aria-labelledby="order-dialog-title"
+    >
+      <h2 id="order-dialog-title">Оформление заявки</h2>
+
+      <form
+        class="order-form"
+        id="order-form"
+        action="#"
+        method="post"
+        novalidate
+      >
+        <input id="selected-product" name="selected-product" type="hidden" />
+
+        <div class="form-field">
+          <label for="order-name">Имя</label>
+          <input
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="order-email">E-mail</label>
+          <input
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="order-phone">Телефон</label>
+          <input
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            required
+          />
+          <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label for="order-date">Дата связи</label>
+          <input id="order-date" name="date" type="date" />
+        </div>
+
+        <div class="form-field">
+          <label for="order-topic">Тема заявки</label>
+          <select id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="order-comment">Комментарий</label>
+          <textarea
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+          <label>
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            />
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="close-order-dialog">Закрыть</button>
+          <button type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </dialog>
+
+    <p class="success-message" id="success-message" hidden>
+      Форма успешно отправлена!
+    </p>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Каталог товаров учебного интернет-магазина."
+    />
+    <title>Каталог товаров — Учебный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Учебный интернет-магазин" />
+    <meta
+      property="og:description"
+      content="Учебный frontend-проект интернет-магазина."
+    />
+    <meta
+      property="og:image"
+      content="https://TitaNik322.github.io/kr1-html-css-shop/images/preview.jpg"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <a class="site-logo" href="index.html">ShopProject</a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="index.html#advantages">Преимущества</a></li>
+            <li><a href="index.html#popular">Популярные товары</a></li>
+            <li><a href="index.html#contacts">Обратная связь</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a>
+        <span>Каталог</span>
+      </nav>
+
+      <section class="section">
+        <h1>Каталог товаров</h1>
+        <p>
+          На этой странице представлен учебный каталог товаров. В дальнейшем
+          здесь будут добавлены фильтры, сортировка и более подробные карточки.
+        </p>
+      </section>
+
+      <section class="catalog-layout">
+        <aside class="catalog-filters">
+          <h2>Фильтры</h2>
+
+          <form class="filters-form" action="#" method="get">
+            <fieldset>
+              <legend>Категория</legend>
+
+              <label>
+                <input type="checkbox" name="category" value="all" />
+                Все товары
+              </label>
+
+              <label>
+                <input type="checkbox" name="category" value="popular" />
+                Популярные
+              </label>
+
+              <label>
+                <input type="checkbox" name="category" value="new" />
+                Новинки
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Цена</legend>
+
+              <label for="price-from">От</label>
+              <input
+                id="price-from"
+                name="price-from"
+                type="number"
+                min="0"
+                placeholder="0"
+              />
+
+              <label for="price-to">До</label>
+              <input
+                id="price-to"
+                name="price-to"
+                type="number"
+                min="0"
+                placeholder="5000"
+              />
+            </fieldset>
+
+            <button class="button" type="submit">Применить</button>
+          </form>
+        </aside>
+
+        <section class="catalog-products">
+          <h2>Список товаров</h2>
+          <div class="products-grid">
+            <article class="product-card product-card--new">
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/product-1.jpg"
+                  alt="Клавиатура Lynace K1 Dragon"
+                />
+              </div>
+              <h3 class="product-card__title">Lynace K1 Dragon</h3>
+              <p class="product-card__description">
+                Механическая клавиатура в красном корпусе с драконьим принтом на
+                кейкапах.
+              </p>
+              <p class="product-card__price">5990 руб.</p>
+              <div class="product-card__actions">
+                <a class="button" href="product-1.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card product-card--hit">
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/product-2.jpg"
+                  alt="Клавиатура Logitech G Pro X"
+                />
+              </div>
+              <h3 class="product-card__title">Logitech G Pro X</h3>
+              <p class="product-card__description">
+                Компактная игровая клавиатура с горячей заменой свитчей и
+                RGB-подсветкой.
+              </p>
+              <p class="product-card__price">12990 руб.</p>
+              <div class="product-card__actions">
+                <a class="button" href="product-2.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card product-card--discount">
+              <span class="product-card__badge">Скидка</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/product-3.jpg"
+                  alt="Клавиатура Razer Huntsman V2"
+                />
+              </div>
+              <h3 class="product-card__title">Razer Huntsman V2</h3>
+              <p class="product-card__description">
+                Оптическая игровая клавиатура с полноразмерной раскладкой и
+                упором для рук.
+              </p>
+              <p class="product-card__price">17990 руб.</p>
+              <div class="product-card__actions">
+                <a class="button" href="product.html">Подробнее</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </footer>
+  </body>
+</html>

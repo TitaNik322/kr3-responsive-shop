@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Форма оформления заявки на клавиатуру." />
+  <title>Оформление заявки — Учебный интернет-магазин клавиатур</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">KeyboardShop</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li><a class="site-nav__link site-nav__link--active" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li><a class="site-nav__link" href="index.html#popular">Популярные</a></li>
+          <li><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span>Оформление заявки</span>
+    </nav>
+
+    <section class="section">
+      <h1>Оформление заявки</h1>
+      <p>Заполните форму, чтобы оформить заказ клавиатуры. Поля со звёздочкой обязательны.</p>
+    </section>
+
+    <section class="section">
+      <form class="order-form order-form--page" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden" />
+
+        <div class="form-field">
+          <label for="order-name">Имя</label>
+          <input id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required />
+        </div>
+
+        <div class="form-field">
+          <label for="order-email">E-mail</label>
+          <input id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required />
+        </div>
+
+        <div class="form-field">
+          <label for="order-phone">Телефон</label>
+          <input id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required />
+          <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label for="order-date">Дата связи</label>
+          <input id="order-date" name="date" type="date" />
+        </div>
+
+        <div class="form-field">
+          <label for="order-topic">Тема заявки</label>
+          <select id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="lynace">Lynace K1</option>
+            <option value="logitech">Logitech G Pro X</option>
+            <option value="razer">Razer Huntsman V2</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="order-comment">Комментарий</label>
+          <textarea id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+          <label>
+            <input id="order-agreement" name="agreement" type="checkbox" required />
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Отправить заявку</button>
+          <a class="button button--ghost" href="index.html">Отмена</a>
+        </div>
+      </form>
+
+      <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+  <a class="fixed-up" href="#" aria-label="Наверх">Наверх</a>
+</body>
+</html>
