@@ -129,7 +129,7 @@ Backend к формам не подключён: они проверяют вв�
 2. `feature/a11y-lighthouse-audit` — [доступность и Lighthouse, PR №2](https://github.com/TitaNik322/kr3-responsive-shop/pull/2).
 3. `fix/kr3-final-check` — [финальная проверка, PR №3](https://github.com/TitaNik322/kr3-responsive-shop/pull/3).
 4. `docs/github-pages-readme` — [ссылка на опубликованный сайт, PR №4](https://github.com/TitaNik322/kr3-responsive-shop/pull/4).
-5. `feature/store-polish` — обновление фотографий, интерфейсных подписей, подвала и README.
+5. `feature/store-polish` — [фотографии, подвал и оформление, PR №5](https://github.com/TitaNik322/kr3-responsive-shop/pull/5).
 
 Изменения объединяются через Pull Request с сохранением merge-коммитов.
 
