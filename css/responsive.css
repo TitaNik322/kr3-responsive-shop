@@ -62,3 +62,9 @@ img,video { max-width:100%; height:auto; }
 }
 @media (min-width:1280px) { .catalog-layout .products-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+.field-error { color:#a12e17; font-size:.75rem; }
+[aria-invalid=true] { border-color:#a12e17; }
+@media (min-width:768px) {
+ /* Make native details navigation available on desktop even without JS. */
+ .nav-menu::details-content { content-visibility:visible; }
+}

@@ -42,9 +42,45 @@ dialog?.addEventListener('click', (event) => { if (event.target === dialog) {
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
 }});
 dialog?.addEventListener('close', () => dialogTrigger?.focus());
+// Keep Tab and Shift+Tab within the dialog, including the browser's wrap boundary.
+dialog?.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  const controls = [...dialog.querySelectorAll('button, input:not([type=hidden]), select, textarea, a[href]')]
+    .filter((element) => !element.disabled && element.getClientRects().length);
+  const first = controls[0];
+  const last = controls.at(-1);
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
 
 // Preserve browser validation and clearly identify this as a local demo.
 document.querySelectorAll('[data-demo-form]').forEach((form) => {
+  // Add linked error text without suppressing the browser's validation messages.
+  form.querySelectorAll('input:not([type=hidden]), textarea, select').forEach((field, index) => {
+    const error = document.createElement('span');
+    error.className = 'field-error';
+    error.id = `${field.id || form.closest('dialog')?.id || 'form'}-error-${index}`;
+    error.hidden = true;
+    field.closest('label')?.classList.contains('checkbox')
+      ? field.closest('label').after(error)
+      : field.after(error);
+    field.setAttribute('aria-describedby', [field.getAttribute('aria-describedby'), error.id].filter(Boolean).join(' '));
+    field.addEventListener('invalid', () => {
+      field.setAttribute('aria-invalid', 'true');
+      error.textContent = field.validationMessage;
+      error.hidden = false;
+    });
+    field.addEventListener('input', () => {
+      field.removeAttribute('aria-invalid');
+      error.hidden = true;
+      error.textContent = '';
+    });
+  });
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const status = form.querySelector('.form-status');
@@ -52,6 +88,14 @@ document.querySelectorAll('[data-demo-form]').forEach((form) => {
     status.focus();
   });
   form.addEventListener('input', () => { form.querySelector('.form-status').textContent = ''; });
+  form.addEventListener('reset', () => {
+    form.querySelectorAll('[aria-invalid]').forEach((field) => field.removeAttribute('aria-invalid'));
+    form.querySelectorAll('.field-error').forEach((error) => {
+      error.hidden = true;
+      error.textContent = '';
+    });
+    form.querySelector('.form-status').textContent = '';
+  });
 });
 const selected = Number(new URLSearchParams(location.search).get('product'));
 const productSelect = document.getElementById('order-product');
