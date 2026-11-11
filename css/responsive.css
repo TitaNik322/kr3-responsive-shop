@@ -279,16 +279,6 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-}
 .field-error {
   color: #a12e17;
   font-size: 0.75rem;
